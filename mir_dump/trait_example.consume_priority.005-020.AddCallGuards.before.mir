@@ -1,0 +1,33 @@
+// MIR for `consume_priority` before AddCallGuards
+
+fn consume_priority(_1: &mut C) -> bool {
+    debug container => _1;
+    let mut _0: bool;
+    let mut _2: &std::option::Option<Item>;
+    let _3: std::option::Option<Item>;
+
+    bb0: {
+        _3 = <C as RemovableContainer<Item>>::remove(_1) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _2 = &_3;
+        _0 = Option::<Item>::is_some(move _2) -> [return: bb2, unwind: bb4];
+    }
+
+    bb2: {
+        drop(_3) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        return;
+    }
+
+    bb4 (cleanup): {
+        drop(_3) -> [return: bb5, unwind terminate(cleanup)];
+    }
+
+    bb5 (cleanup): {
+        resume;
+    }
+}

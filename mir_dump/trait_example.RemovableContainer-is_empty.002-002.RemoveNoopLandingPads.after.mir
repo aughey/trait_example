@@ -1,0 +1,26 @@
+// MIR for `RemovableContainer::is_empty` after RemoveNoopLandingPads
+
+fn RemovableContainer::is_empty(_1: &Self) -> bool {
+    debug self => _1;
+    let mut _0: bool;
+    let mut _2: usize;
+    let mut _3: &Self;
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &(*_1);
+        _2 = <Self as RemovableContainer<Item>>::len(move _3) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        _0 = Eq(move _2, const 0_usize);
+        StorageDead(_2);
+        return;
+    }
+
+    bb2 (cleanup): {
+        resume;
+    }
+}

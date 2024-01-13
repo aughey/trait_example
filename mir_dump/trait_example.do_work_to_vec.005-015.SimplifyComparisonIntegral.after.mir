@@ -1,0 +1,15 @@
+// MIR for `do_work_to_vec` after SimplifyComparisonIntegral
+
+fn do_work_to_vec(_1: &mut Vec<i32>) -> () {
+    debug container => _1;
+    let mut _0: ();
+    let _2: ();
+
+    bb0: {
+        _2 = Vec::<i32>::push(_1, const 42_i32) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

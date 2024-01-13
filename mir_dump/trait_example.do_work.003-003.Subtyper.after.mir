@@ -1,0 +1,63 @@
+// MIR for `do_work` after Subtyper
+
+fn do_work(_1: &mut impl InserttableContainer<i32>) -> () {
+    debug container => _1;
+    let mut _0: ();
+    let _2: i32;
+    let mut _3: &mut rand::prelude::ThreadRng;
+    let mut _4: rand::prelude::ThreadRng;
+    let mut _5: std::ops::Range<i32>;
+    let _6: ();
+    let mut _7: &mut impl InserttableContainer<i32>;
+    let mut _8: i32;
+    scope 1 {
+        debug num => _2;
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = thread_rng() -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _3 = &mut _4;
+        StorageLive(_5);
+        _5 = std::ops::Range::<i32> { start: const 0_i32, end: const 100_i32 };
+        _2 = <ThreadRng as Rng>::gen_range::<i32, std::ops::Range<i32>>(move _3, move _5) -> [return: bb2, unwind: bb5];
+    }
+
+    bb2: {
+        StorageDead(_5);
+        StorageDead(_3);
+        drop(_4) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        StorageDead(_4);
+        StorageLive(_6);
+        StorageLive(_7);
+        _7 = &mut (*_1);
+        StorageLive(_8);
+        _8 = _2;
+        _6 = <impl InserttableContainer<i32> as InserttableContainer<i32>>::insert(move _7, move _8) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_8);
+        StorageDead(_7);
+        StorageDead(_6);
+        _0 = const ();
+        StorageDead(_2);
+        return;
+    }
+
+    bb5 (cleanup): {
+        drop(_4) -> [return: bb6, unwind terminate(cleanup)];
+    }
+
+    bb6 (cleanup): {
+        resume;
+    }
+}

@@ -1,0 +1,76 @@
+// MIR for `consume_priority` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?1}
+| '?2 | U0 | {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?2}
+| '?3 | U0 | {bb0[3..=4]}
+| '?4 | U0 | {bb1[0..=2]}
+| '?5 | U0 | {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0], '?1}
+| '?6 | U0 | {bb1[1..=2]}
+| '?7 | U0 | {bb0[4]}
+| '?8 | U0 | {bb0[4]}
+| '?9 | U0 | {bb1[2]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0]}
+| '?1 live at {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0]}
+| '?2 live at {bb0[0..=4], bb1[0..=2], bb2[0..=1], bb3[0..=1], bb4[0], bb5[0]}
+| '?3 live at {bb0[3]}
+| '?4 live at {bb1[0]}
+| '?6 live at {bb1[1..=2]}
+| '?7 live at {bb0[4]}
+| '?8 live at {bb0[4]}
+| '?9 live at {bb1[2]}
+| '?1: '?5 due to BoringNoLocation at All(src/lib.rs:35:34: 35:43) (src/lib.rs:35:34: 35:43 (#0)
+| '?3: '?7 due to Boring at Single(bb0[3]) (src/lib.rs:40:5: 40:14 (#0)
+| '?4: '?6 due to Boring at Single(bb1[0]) (src/lib.rs:40:5: 40:23 (#0)
+| '?5: '?1 due to BoringNoLocation at All(src/lib.rs:35:34: 35:43) (src/lib.rs:35:34: 35:43 (#0)
+| '?5: '?3 due to Boring at Single(bb0[3]) (src/lib.rs:40:5: 40:14 (#0)
+| '?6: '?9 due to CallArgument(Some(FnDef(DefId(2:8653 ~ core[e323]::option::{impl#0}::is_some), [Item/#1, true]))) at Single(bb1[2]) (src/lib.rs:40:5: 40:33 (#0)
+| '?7: '?8 due to CallArgument(Some(FnDef(DefId(0:32 ~ trait_example[cadf]::RemovableContainer::remove), [C/#0, Item/#1]))) at Single(bb0[4]) (src/lib.rs:40:5: 40:23 (#0)
+|
+fn consume_priority(_1: &mut C) -> bool {
+    debug container => _1;
+    let mut _0: bool;
+    let mut _2: &std::option::Option<Item>;
+    let _3: std::option::Option<Item>;
+    let mut _4: &mut C;
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = &mut (*_1);
+        _3 = <C as RemovableContainer<Item>>::remove(move _4) -> [return: bb1, unwind: bb5];
+    }
+
+    bb1: {
+        _2 = &_3;
+        StorageDead(_4);
+        _0 = Option::<Item>::is_some(move _2) -> [return: bb2, unwind: bb4];
+    }
+
+    bb2: {
+        StorageDead(_2);
+        drop(_3) -> [return: bb3, unwind: bb5];
+    }
+
+    bb3: {
+        StorageDead(_3);
+        return;
+    }
+
+    bb4 (cleanup): {
+        drop(_3) -> [return: bb5, unwind terminate(cleanup)];
+    }
+
+    bb5 (cleanup): {
+        resume;
+    }
+}

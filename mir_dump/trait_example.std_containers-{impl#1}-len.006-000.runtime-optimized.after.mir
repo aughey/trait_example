@@ -1,0 +1,14 @@
+// MIR for `std_containers::<impl at src/std_containers.rs:13:1: 13:41>::len` after runtime-optimized
+
+fn std_containers::<impl at src/std_containers.rs:13:1: 13:41>::len(_1: &Vec<T>) -> usize {
+    debug self => _1;
+    let mut _0: usize;
+
+    bb0: {
+        _0 = Vec::<T>::len(_1) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

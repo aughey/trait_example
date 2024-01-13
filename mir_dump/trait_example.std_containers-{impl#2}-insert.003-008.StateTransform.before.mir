@@ -1,0 +1,43 @@
+// MIR for `std_containers::<impl at src/std_containers.rs:24:1: 25:30>::insert` before StateTransform
+
+fn std_containers::<impl at src/std_containers.rs:24:1: 25:30>::insert(_1: &mut HashSet<T>, _2: T) -> () {
+    debug self => _1;
+    debug item => _2;
+    let mut _0: ();
+    let _3: bool;
+    let mut _4: &mut std::collections::HashSet<T>;
+    let mut _5: T;
+
+    bb0: {
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = &mut (*_1);
+        StorageLive(_5);
+        _5 = move _2;
+        _3 = HashSet::<T>::insert(move _4, move _5) -> [return: bb1, unwind: bb3];
+    }
+
+    bb1: {
+        StorageDead(_5);
+        StorageDead(_4);
+        StorageDead(_3);
+        _0 = const ();
+        goto -> bb2;
+    }
+
+    bb2: {
+        return;
+    }
+
+    bb3 (cleanup): {
+        goto -> bb4;
+    }
+
+    bb4 (cleanup): {
+        goto -> bb5;
+    }
+
+    bb5 (cleanup): {
+        resume;
+    }
+}

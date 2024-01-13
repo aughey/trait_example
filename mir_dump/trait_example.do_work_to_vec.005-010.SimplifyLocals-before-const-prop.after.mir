@@ -1,0 +1,17 @@
+// MIR for `do_work_to_vec` after SimplifyLocals-before-const-prop
+
+fn do_work_to_vec(_1: &mut Vec<i32>) -> () {
+    debug container => _1;
+    let mut _0: ();
+    let _2: ();
+    let mut _3: &mut std::vec::Vec<i32>;
+
+    bb0: {
+        _3 = _1;
+        _2 = Vec::<i32>::push(move _3, const 42_i32) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

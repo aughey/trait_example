@@ -1,0 +1,16 @@
+// MIR for `std_containers::<impl at src/std_containers.rs:24:1: 25:30>::insert` after runtime-optimized
+
+fn std_containers::<impl at src/std_containers.rs:24:1: 25:30>::insert(_1: &mut HashSet<T>, _2: T) -> () {
+    debug self => _1;
+    debug item => _2;
+    let mut _0: ();
+    let _3: bool;
+
+    bb0: {
+        _3 = HashSet::<T>::insert(_1, move _2) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

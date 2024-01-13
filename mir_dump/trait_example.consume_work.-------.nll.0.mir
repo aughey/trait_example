@@ -1,0 +1,72 @@
+// MIR for `consume_work` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0], '?1}
+| '?2 | U0 | {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0], '?2}
+| '?3 | U0 | {bb0[2..=3]}
+| '?4 | U0 | {bb1[3..=4]}
+| '?5 | U0 | {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0], '?1}
+| '?6 | U0 | {bb0[3]}
+| '?7 | U0 | {bb1[4]}
+| '?8 | U0 | {bb0[3]}
+| '?9 | U0 | {bb1[4]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0]}
+| '?1 live at {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0]}
+| '?2 live at {bb0[0..=3], bb1[0..=4], bb2[0..=2], bb3[0]}
+| '?3 live at {bb0[2]}
+| '?4 live at {bb1[3]}
+| '?6 live at {bb0[3]}
+| '?7 live at {bb1[4]}
+| '?8 live at {bb0[3]}
+| '?9 live at {bb1[4]}
+| '?1: '?5 due to BoringNoLocation at All(src/lib.rs:43:21: 43:30) (src/lib.rs:43:21: 43:30 (#0)
+| '?3: '?6 due to Boring at Single(bb0[2]) (src/lib.rs:45:16: 45:25 (#0)
+| '?4: '?7 due to Boring at Single(bb1[3]) (src/lib.rs:46:5: 46:9 (#0)
+| '?5: '?1 due to BoringNoLocation at All(src/lib.rs:43:21: 43:30) (src/lib.rs:43:21: 43:30 (#0)
+| '?5: '?3 due to Boring at Single(bb0[2]) (src/lib.rs:45:16: 45:25 (#0)
+| '?6: '?8 due to CallArgument(Some(FnDef(DefId(0:32 ~ trait_example[cadf]::RemovableContainer::remove), [impl RemovableContainer<i32>/#0, i32]))) at Single(bb0[3]) (src/lib.rs:45:16: 45:34 (#0)
+| '?7: '?9 due to CallArgument(Some(FnDef(DefId(2:8653 ~ core[e323]::option::{impl#0}::is_some), [i32, true]))) at Single(bb1[4]) (src/lib.rs:46:5: 46:19 (#0)
+|
+fn consume_work(_1: &mut impl RemovableContainer<i32>) -> bool {
+    debug container => _1;
+    let mut _0: bool;
+    let _2: std::option::Option<i32>;
+    let mut _3: &mut impl RemovableContainer<i32>;
+    let mut _4: &std::option::Option<i32>;
+    scope 1 {
+        debug data => _2;
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &mut (*_1);
+        _2 = <impl RemovableContainer<i32> as RemovableContainer<i32>>::remove(move _3) -> [return: bb1, unwind: bb3];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        FakeRead(ForLet(None), _2);
+        StorageLive(_4);
+        _4 = &_2;
+        _0 = Option::<i32>::is_some(move _4) -> [return: bb2, unwind: bb3];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        StorageDead(_2);
+        return;
+    }
+
+    bb3 (cleanup): {
+        resume;
+    }
+}

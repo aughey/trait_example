@@ -1,0 +1,53 @@
+// MIR for `RemovableContainer::is_empty` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?2, '?1]
+| '?1 | Local | ['?2, '?1]
+| '?2 | Local | ['?2]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=3], bb1[0..=3], bb2[0], '?0, '?1, '?2}
+| '?1 | U0 | {bb0[0..=3], bb1[0..=3], bb2[0], '?1}
+| '?2 | U0 | {bb0[0..=3], bb1[0..=3], bb2[0], '?2}
+| '?3 | U0 | {bb0[2..=3]}
+| '?4 | U0 | {bb0[0..=3], bb1[0..=3], bb2[0], '?1}
+| '?5 | U0 | {bb0[3]}
+| '?6 | U0 | {bb0[3]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=3], bb1[0..=3], bb2[0]}
+| '?1 live at {bb0[0..=3], bb1[0..=3], bb2[0]}
+| '?2 live at {bb0[0..=3], bb1[0..=3], bb2[0]}
+| '?3 live at {bb0[2]}
+| '?5 live at {bb0[3]}
+| '?6 live at {bb0[3]}
+| '?1: '?4 due to BoringNoLocation at All(src/lib.rs:24:17: 24:22) (src/lib.rs:24:17: 24:22 (#0)
+| '?3: '?5 due to Boring at Single(bb0[2]) (src/lib.rs:25:9: 25:13 (#0)
+| '?4: '?1 due to BoringNoLocation at All(src/lib.rs:24:17: 24:22) (src/lib.rs:24:17: 24:22 (#0)
+| '?4: '?3 due to Boring at Single(bb0[2]) (src/lib.rs:25:9: 25:13 (#0)
+| '?5: '?6 due to CallArgument(Some(FnDef(DefId(0:33 ~ trait_example[cadf]::RemovableContainer::len), [Self/#0, Item/#1]))) at Single(bb0[3]) (src/lib.rs:25:9: 25:19 (#0)
+|
+fn RemovableContainer::is_empty(_1: &Self) -> bool {
+    debug self => _1;
+    let mut _0: bool;
+    let mut _2: usize;
+    let mut _3: &Self;
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &(*_1);
+        _2 = <Self as RemovableContainer<Item>>::len(move _3) -> [return: bb1, unwind: bb2];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        _0 = Eq(move _2, const 0_usize);
+        StorageDead(_2);
+        return;
+    }
+
+    bb2 (cleanup): {
+        resume;
+    }
+}

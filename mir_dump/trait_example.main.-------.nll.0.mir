@@ -1,0 +1,530 @@
+// MIR for `main` 0 nll
+
+| Free Region Mapping
+| '?0 | Global | ['?0, '?1]
+| '?1 | Local | ['?1]
+|
+| Inferred Region Values
+| '?0 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?1 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?1}
+| '?2 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?3 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?4 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?5 | U0 | {bb6[9..=23], bb7[0..=7], bb8[0..=2]}
+| '?6 | U0 | {bb6[9..=23], bb7[0..=7], bb8[0..=2]}
+| '?7 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?8 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?9 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?10 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?11 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?12 | U0 | {bb2[9..=23], bb3[0..=7], bb4[0..=2]}
+| '?13 | U0 | {bb2[9..=23], bb3[0..=7], bb4[0..=2]}
+| '?14 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?15 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?16 | U0 | {bb1[4..=6]}
+| '?17 | U0 | {bb1[5..=6]}
+| '?18 | U0 | {bb2[9..=23], bb3[0..=7], bb4[0..=2]}
+| '?19 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?20 | U0 | {bb2[10..=23], bb3[0..=7], bb4[0..=2]}
+| '?21 | U0 | {bb2[11..=23], bb3[0..=7], bb4[0..=2]}
+| '?22 | U0 | {bb2[12..=23], bb3[0..=7], bb4[0..=2]}
+| '?23 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?24 | U0 | {bb2[21..=23], bb3[0..=7], bb4[0..=2]}
+| '?25 | U0 | {bb2[22..=23], bb3[0..=7], bb4[0..=2]}
+| '?26 | U0 | {bb2[23]}
+| '?27 | U0 | {bb3[1..=7], bb4[0..=2]}
+| '?28 | U0 | {bb3[3..=7], bb4[0..=2]}
+| '?29 | U0 | {bb3[4..=7], bb4[0..=2]}
+| '?30 | U0 | {bb3[5..=7], bb4[0..=2]}
+| '?31 | U0 | {bb3[5..=7], bb4[0..=2]}
+| '?32 | U0 | {bb3[7], bb4[0..=2]}
+| '?33 | U0 | {bb5[11..=13]}
+| '?34 | U0 | {bb5[12..=13]}
+| '?35 | U0 | {bb6[9..=23], bb7[0..=7], bb8[0..=2]}
+| '?36 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?37 | U0 | {bb6[10..=23], bb7[0..=7], bb8[0..=2]}
+| '?38 | U0 | {bb6[11..=23], bb7[0..=7], bb8[0..=2]}
+| '?39 | U0 | {bb6[12..=23], bb7[0..=7], bb8[0..=2]}
+| '?40 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?41 | U0 | {bb6[21..=23], bb7[0..=7], bb8[0..=2]}
+| '?42 | U0 | {bb6[22..=23], bb7[0..=7], bb8[0..=2]}
+| '?43 | U0 | {bb6[23]}
+| '?44 | U0 | {bb7[1..=7], bb8[0..=2]}
+| '?45 | U0 | {bb7[3..=7], bb8[0..=2]}
+| '?46 | U0 | {bb7[4..=7], bb8[0..=2]}
+| '?47 | U0 | {bb7[5..=7], bb8[0..=2]}
+| '?48 | U0 | {bb7[5..=7], bb8[0..=2]}
+| '?49 | U0 | {bb7[7], bb8[0..=2]}
+| '?50 | U0 | {bb1[6]}
+| '?51 | U0 | {bb1[5..=6]}
+| '?52 | U0 | {bb4[0..=2]}
+| '?53 | U0 | {bb2[13..=23], bb3[0..=7], bb4[0..=2]}
+| '?54 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?55 | U0 | {bb2[12..=23], bb3[0..=7], bb4[0..=2]}
+| '?56 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?57 | U0 | {bb2[11..=23], bb3[0..=7], bb4[0..=2]}
+| '?58 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?59 | U0 | {}
+| '?60 | U0 | {bb3[6..=7], bb4[0..=2]}
+| '?61 | U0 | {bb3[6..=7], bb4[0..=2]}
+| '?62 | U0 | {bb3[5..=7], bb4[0..=2]}
+| '?63 | U0 | {bb3[5..=7], bb4[0..=2]}
+| '?64 | U0 | {bb3[4..=7], bb4[0..=2]}
+| '?65 | U0 | {bb3[4..=7], bb4[0..=2]}
+| '?66 | U0 | {bb3[2..=7], bb4[0..=2]}
+| '?67 | U0 | {bb3[0..=7], bb4[0..=2]}
+| '?68 | U0 | {bb2[23], bb3[0..=7], bb4[0..=2]}
+| '?69 | U0 | {bb2[22..=23], bb3[0..=7], bb4[0..=2]}
+| '?70 | U0 | {bb5[13]}
+| '?71 | U0 | {bb5[12..=13]}
+| '?72 | U0 | {bb8[0..=2]}
+| '?73 | U0 | {bb6[13..=23], bb7[0..=7], bb8[0..=2]}
+| '?74 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?75 | U0 | {bb6[12..=23], bb7[0..=7], bb8[0..=2]}
+| '?76 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?77 | U0 | {bb6[11..=23], bb7[0..=7], bb8[0..=2]}
+| '?78 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?79 | U0 | {}
+| '?80 | U0 | {bb7[6..=7], bb8[0..=2]}
+| '?81 | U0 | {bb7[6..=7], bb8[0..=2]}
+| '?82 | U0 | {bb7[5..=7], bb8[0..=2]}
+| '?83 | U0 | {bb7[5..=7], bb8[0..=2]}
+| '?84 | U0 | {bb7[4..=7], bb8[0..=2]}
+| '?85 | U0 | {bb7[4..=7], bb8[0..=2]}
+| '?86 | U0 | {bb7[2..=7], bb8[0..=2]}
+| '?87 | U0 | {bb7[0..=7], bb8[0..=2]}
+| '?88 | U0 | {bb6[23], bb7[0..=7], bb8[0..=2]}
+| '?89 | U0 | {bb6[22..=23], bb7[0..=7], bb8[0..=2]}
+| '?90 | U0 | {bb6[10..=23], bb7[0..=7], bb8[0..=2]}
+| '?91 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?92 | U0 | {bb2[10..=23], bb3[0..=7], bb4[0..=2]}
+| '?93 | U0 | {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0], '?0, '?1}
+| '?94 | U0 | {bb3[7], bb4[0..=2]}
+| '?95 | U0 | {bb2[23]}
+| '?96 | U0 | {bb7[7], bb8[0..=2]}
+| '?97 | U0 | {bb6[23]}
+| '?98 | U0 | {bb3[7], bb4[0..=2]}
+| '?99 | U0 | {bb3[7], bb4[0..=2]}
+| '?100 | U0 | {bb2[23]}
+| '?101 | U0 | {bb2[23]}
+| '?102 | U0 | {bb7[7], bb8[0..=2]}
+| '?103 | U0 | {bb7[7], bb8[0..=2]}
+| '?104 | U0 | {bb6[23]}
+| '?105 | U0 | {bb6[23]}
+| '?106 | U0 | {bb1[6]}
+| '?107 | U0 | {bb2[23], bb3[0..=7], bb4[0..=2]}
+| '?108 | U0 | {bb4[2]}
+| '?109 | U0 | {bb5[13]}
+| '?110 | U0 | {bb6[23], bb7[0..=7], bb8[0..=2]}
+| '?111 | U0 | {bb8[2]}
+|
+| Inference Constraints
+| '?0 live at {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0]}
+| '?1 live at {bb0[0..=1], bb1[0..=6], bb2[0..=23], bb3[0..=7], bb4[0..=2], bb5[0..=13], bb6[0..=23], bb7[0..=7], bb8[0..=2], bb9[0..=9], bb10[0..=1], bb11[0], bb12[0]}
+| '?3 live at {bb6[9]}
+| '?4 live at {bb6[9]}
+| '?10 live at {bb2[9]}
+| '?11 live at {bb2[9]}
+| '?16 live at {bb1[4]}
+| '?17 live at {bb1[5]}
+| '?18 live at {bb2[9]}
+| '?19 live at {bb2[9]}
+| '?20 live at {bb2[10]}
+| '?21 live at {bb2[11]}
+| '?22 live at {bb2[12]}
+| '?23 live at {bb2[12]}
+| '?24 live at {bb2[21]}
+| '?25 live at {bb2[22]}
+| '?26 live at {bb2[23]}
+| '?27 live at {bb3[1]}
+| '?28 live at {bb3[3]}
+| '?29 live at {bb3[4]}
+| '?30 live at {bb3[5]}
+| '?31 live at {bb3[5]}
+| '?32 live at {bb3[7]}
+| '?33 live at {bb5[11]}
+| '?34 live at {bb5[12]}
+| '?35 live at {bb6[9]}
+| '?36 live at {bb6[9]}
+| '?37 live at {bb6[10]}
+| '?38 live at {bb6[11]}
+| '?39 live at {bb6[12]}
+| '?40 live at {bb6[12]}
+| '?41 live at {bb6[21]}
+| '?42 live at {bb6[22]}
+| '?43 live at {bb6[23]}
+| '?44 live at {bb7[1]}
+| '?45 live at {bb7[3]}
+| '?46 live at {bb7[4]}
+| '?47 live at {bb7[5]}
+| '?48 live at {bb7[5]}
+| '?49 live at {bb7[7]}
+| '?50 live at {bb1[6]}
+| '?51 live at {bb1[5]}
+| '?52 live at {bb4[0..=2]}
+| '?53 live at {bb2[13..=23], bb3[0..=7]}
+| '?54 live at {bb2[13..=23], bb3[0..=7]}
+| '?55 live at {bb2[12]}
+| '?56 live at {bb2[12]}
+| '?57 live at {bb2[11]}
+| '?58 live at {bb2[11]}
+| '?60 live at {bb3[6..=7]}
+| '?61 live at {bb3[6..=7]}
+| '?62 live at {bb3[5]}
+| '?63 live at {bb3[5]}
+| '?64 live at {bb3[4]}
+| '?65 live at {bb3[4]}
+| '?66 live at {bb3[2..=3]}
+| '?67 live at {bb3[0..=1]}
+| '?68 live at {bb2[23]}
+| '?69 live at {bb2[22]}
+| '?70 live at {bb5[13]}
+| '?71 live at {bb5[12]}
+| '?72 live at {bb8[0..=2]}
+| '?73 live at {bb6[13..=23], bb7[0..=7]}
+| '?74 live at {bb6[13..=23], bb7[0..=7]}
+| '?75 live at {bb6[12]}
+| '?76 live at {bb6[12]}
+| '?77 live at {bb6[11]}
+| '?78 live at {bb6[11]}
+| '?80 live at {bb7[6..=7]}
+| '?81 live at {bb7[6..=7]}
+| '?82 live at {bb7[5]}
+| '?83 live at {bb7[5]}
+| '?84 live at {bb7[4]}
+| '?85 live at {bb7[4]}
+| '?86 live at {bb7[2..=3]}
+| '?87 live at {bb7[0..=1]}
+| '?88 live at {bb6[23]}
+| '?89 live at {bb6[22]}
+| '?90 live at {bb6[10]}
+| '?91 live at {bb6[10]}
+| '?92 live at {bb2[10]}
+| '?93 live at {bb2[10]}
+| '?106 live at {bb1[6]}
+| '?107 live at {bb2[23]}
+| '?108 live at {bb4[2]}
+| '?109 live at {bb5[13]}
+| '?110 live at {bb6[23]}
+| '?111 live at {bb8[2]}
+| '?0: '?32 due to BoringNoLocation at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?0: '?49 due to BoringNoLocation at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?2: '?8 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?3: '?2 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?4: '?2 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?5: '?6 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?6: '?35 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?7: '?36 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?8: '?7 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?9: '?15 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?10: '?9 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?11: '?9 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?12: '?13 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?13: '?18 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?14: '?19 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?15: '?14 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?16: '?51 due to Boring at Single(bb1[4]) (src/main.rs:17:20: 17:26 (#0)
+| '?17: '?50 due to Boring at Single(bb1[5]) (src/main.rs:17:20: 17:26 (#0)
+| '?18: '?13 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?18: '?92 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?19: '?14 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?19: '?93 due to Boring at Single(bb2[9]) (src/main.rs:18:14: 18:23 (#0)
+| '?20: '?57 due to Boring at Single(bb2[10]) (src/main.rs:18:14: 18:23 (#0)
+| '?21: '?55 due to Boring at Single(bb2[11]) (src/main.rs:18:14: 18:23 (#0)
+| '?22: '?53 due to Boring at Single(bb2[12]) (src/main.rs:18:14: 18:23 (#0)
+| '?23: '?54 due to Boring at Single(bb2[12]) (src/main.rs:18:14: 18:23 (#0)
+| '?23: '?56 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb2[12]) (src/main.rs:18:14: 18:23 (#0)
+| '?24: '?69 due to Boring at Single(bb2[21]) (src/main.rs:18:25: 18:26 (#9)
+| '?25: '?68 due to Boring at Single(bb2[22]) (src/main.rs:18:25: 18:26 (#9)
+| '?26: '?95 due to Boring at Single(bb2[23]) (src/main.rs:18:18: 18:22 (#9)
+| '?27: '?66 due to Boring at Single(bb3[1]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?28: '?64 due to Boring at Single(bb3[3]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?29: '?62 due to Boring at Single(bb3[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?30: '?60 due to Boring at Single(bb3[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?31: '?61 due to Boring at Single(bb3[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?31: '?63 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb3[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?32: '?52 due to Boring at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?32: '?94 due to Boring at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?33: '?71 due to Boring at Single(bb5[11]) (src/main.rs:20:24: 20:30 (#0)
+| '?34: '?70 due to Boring at Single(bb5[12]) (src/main.rs:20:24: 20:30 (#0)
+| '?35: '?6 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?35: '?90 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?36: '?7 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?36: '?91 due to Boring at Single(bb6[9]) (src/main.rs:21:14: 21:23 (#0)
+| '?37: '?77 due to Boring at Single(bb6[10]) (src/main.rs:21:14: 21:23 (#0)
+| '?38: '?75 due to Boring at Single(bb6[11]) (src/main.rs:21:14: 21:23 (#0)
+| '?39: '?73 due to Boring at Single(bb6[12]) (src/main.rs:21:14: 21:23 (#0)
+| '?40: '?74 due to Boring at Single(bb6[12]) (src/main.rs:21:14: 21:23 (#0)
+| '?40: '?76 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb6[12]) (src/main.rs:21:14: 21:23 (#0)
+| '?41: '?89 due to Boring at Single(bb6[21]) (src/main.rs:21:25: 21:26 (#11)
+| '?42: '?88 due to Boring at Single(bb6[22]) (src/main.rs:21:25: 21:26 (#11)
+| '?43: '?97 due to Boring at Single(bb6[23]) (src/main.rs:21:18: 21:22 (#11)
+| '?44: '?86 due to Boring at Single(bb7[1]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?45: '?84 due to Boring at Single(bb7[3]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?46: '?82 due to Boring at Single(bb7[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?47: '?80 due to Boring at Single(bb7[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?48: '?81 due to Boring at Single(bb7[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?48: '?83 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb7[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?49: '?72 due to Boring at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?49: '?96 due to Boring at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?50: '?106 due to CallArgument(Some(FnDef(DefId(0:4 ~ trait_example[6eb2]::do_work_to_vec), []))) at Single(bb1[6]) (src/main.rs:17:5: 17:27 (#0)
+| '?51: '?17 due to Boring at Single(bb1[5]) (src/main.rs:17:20: 17:26 (#0)
+| '?52: '?108 due to CallArgument(Some(FnDef(DefId(1:3326 ~ std[e172]::io::stdio::_print), []))) at Single(bb4[2]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:9: 143:62 (#8)
+| '?53: '?32 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?54: '?0 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?55: '?22 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb2[12]) (src/main.rs:18:14: 18:23 (#0)
+| '?56: '?23 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb2[12]) (src/main.rs:18:14: 18:23 (#0)
+| '?57: '?21 due to Boring at Single(bb2[11]) (src/main.rs:18:14: 18:23 (#0)
+| '?58: '?56 due to Boring at Single(bb2[11]) (src/main.rs:18:14: 18:23 (#0)
+| '?60: '?32 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?61: '?32 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?62: '?30 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb3[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?63: '?31 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb3[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?64: '?29 due to Boring at Single(bb3[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?65: '?63 due to Boring at Single(bb3[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?66: '?65 due to Boring at Single(bb3[3]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?67: '?27 due to Boring at Single(bb3[1]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?68: '?107 due to CallArgument(Some(FnDef(DefId(2:9789 ~ core[e323]::fmt::rt::{impl#1}::new_debug), [ReErased, std::vec::Vec<i32, std::alloc::Global>]))) at Single(bb2[23]) (src/main.rs:18:18: 18:22 (#9)
+| '?69: '?25 due to Boring at Single(bb2[22]) (src/main.rs:18:25: 18:26 (#9)
+| '?70: '?109 due to CallArgument(Some(FnDef(DefId(0:5 ~ trait_example[6eb2]::do_work_to_generic), [std::vec::Vec<i32, std::alloc::Global>]))) at Single(bb5[13]) (src/main.rs:20:5: 20:31 (#0)
+| '?71: '?34 due to Boring at Single(bb5[12]) (src/main.rs:20:24: 20:30 (#0)
+| '?72: '?111 due to CallArgument(Some(FnDef(DefId(1:3326 ~ std[e172]::io::stdio::_print), []))) at Single(bb8[2]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:9: 143:62 (#10)
+| '?73: '?49 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?74: '?0 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?75: '?39 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb6[12]) (src/main.rs:21:14: 21:23 (#0)
+| '?76: '?40 due to Cast { unsize_to: Some(&ReErased [&ReErased str]) } at Single(bb6[12]) (src/main.rs:21:14: 21:23 (#0)
+| '?77: '?38 due to Boring at Single(bb6[11]) (src/main.rs:21:14: 21:23 (#0)
+| '?78: '?76 due to Boring at Single(bb6[11]) (src/main.rs:21:14: 21:23 (#0)
+| '?80: '?49 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?81: '?49 due to CallArgument(Some(FnDef(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), [ReErased]))) at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?82: '?47 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb7[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?83: '?48 due to Cast { unsize_to: Some(&ReErased [core::fmt::rt::Argument<ReErased>]) } at Single(bb7[5]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?84: '?46 due to Boring at Single(bb7[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?85: '?83 due to Boring at Single(bb7[4]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?86: '?85 due to Boring at Single(bb7[3]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?87: '?44 due to Boring at Single(bb7[1]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?88: '?110 due to CallArgument(Some(FnDef(DefId(2:9789 ~ core[e323]::fmt::rt::{impl#1}::new_debug), [ReErased, std::vec::Vec<i32, std::alloc::Global>]))) at Single(bb6[23]) (src/main.rs:21:18: 21:22 (#11)
+| '?89: '?42 due to Boring at Single(bb6[22]) (src/main.rs:21:25: 21:26 (#11)
+| '?90: '?37 due to Boring at Single(bb6[10]) (src/main.rs:21:14: 21:23 (#0)
+| '?91: '?78 due to Boring at Single(bb6[10]) (src/main.rs:21:14: 21:23 (#0)
+| '?92: '?20 due to Boring at Single(bb2[10]) (src/main.rs:18:14: 18:23 (#0)
+| '?93: '?58 due to Boring at Single(bb2[10]) (src/main.rs:18:14: 18:23 (#0)
+| '?94: '?32 due to Boring at Single(bb3[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?94: '?99 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?95: '?26 due to Boring at Single(bb2[23]) (src/main.rs:18:18: 18:22 (#9)
+| '?95: '?101 due to BoringNoLocation at All(src/main.rs:18:18: 18:22) (src/main.rs:18:18: 18:22 (#9)
+| '?96: '?49 due to Boring at Single(bb7[7]) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?96: '?103 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?97: '?43 due to Boring at Single(bb6[23]) (src/main.rs:21:18: 21:22 (#11)
+| '?97: '?105 due to BoringNoLocation at All(src/main.rs:21:18: 21:22) (src/main.rs:21:18: 21:22 (#11)
+| '?98: '?99 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?99: '?94 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?99: '?98 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#9)
+| '?100: '?101 due to BoringNoLocation at All(src/main.rs:18:18: 18:22) (src/main.rs:18:18: 18:22 (#9)
+| '?101: '?95 due to BoringNoLocation at All(src/main.rs:18:18: 18:22) (src/main.rs:18:18: 18:22 (#9)
+| '?101: '?100 due to BoringNoLocation at All(src/main.rs:18:18: 18:22) (src/main.rs:18:18: 18:22 (#9)
+| '?102: '?103 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?103: '?96 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?103: '?102 due to BoringNoLocation at All(/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61) (/rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61 (#11)
+| '?104: '?105 due to BoringNoLocation at All(src/main.rs:21:18: 21:22) (src/main.rs:21:18: 21:22 (#11)
+| '?105: '?97 due to BoringNoLocation at All(src/main.rs:21:18: 21:22) (src/main.rs:21:18: 21:22 (#11)
+| '?105: '?104 due to BoringNoLocation at All(src/main.rs:21:18: 21:22) (src/main.rs:21:18: 21:22 (#11)
+| '?107: '?67 due to Boring at Single(bb2[23]) (src/main.rs:18:18: 18:22 (#9)
+| '?110: '?87 due to Boring at Single(bb6[23]) (src/main.rs:21:18: 21:22 (#11)
+|
+| User Type Annotations
+| 0: user_ty: Canonical { value: TypeOf(DefId(5:6967 ~ alloc[0cbc]::vec::{impl#0}::new), UserArgs { args: [^0], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(5:6965 ~ alloc[0cbc]::vec::{impl#0}), self_ty: std::vec::Vec<^1, ^2> }) }), max_universe: U0, variables: [CanonicalVarInfo { kind: Ty(General(U0)) }, CanonicalVarInfo { kind: Ty(General(U0)) }, CanonicalVarInfo { kind: Ty(General(U0)) }] }, span: /rustc/2319be8e265dd19973574eb581d28297baf44b11/library/alloc/src/macros.rs:44:36: 44:57, inferred_ty: fn() -> std::vec::Vec<i32> {std::vec::Vec::<i32>::new}
+| 1: user_ty: Canonical { value: TypeOf(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), UserArgs { args: [ReBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrAnon })], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:9863 ~ core[e323]::fmt::{impl#2}), self_ty: std::fmt::Arguments<ReBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrAnon })> }) }), max_universe: U0, variables: [CanonicalVarInfo { kind: Region(U0) }, CanonicalVarInfo { kind: Region(U0) }] }, span: /rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61, inferred_ty: fn(&[&'static str], &[core::fmt::rt::Argument<'_>]) -> std::fmt::Arguments<'_> {std::fmt::Arguments::<'_>::new_v1}
+| 2: user_ty: Canonical { value: TypeOf(DefId(2:9789 ~ core[e323]::fmt::rt::{impl#1}::new_debug), UserArgs { args: [ReBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrAnon }), ^1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:9781 ~ core[e323]::fmt::rt::{impl#1}), self_ty: core::fmt::rt::Argument<ReBound(DebruijnIndex(0), BoundRegion { var: 2, kind: BrAnon })> }) }), max_universe: U0, variables: [CanonicalVarInfo { kind: Region(U0) }, CanonicalVarInfo { kind: Ty(General(U0)) }, CanonicalVarInfo { kind: Region(U0) }] }, span: src/main.rs:18:18: 18:22, inferred_ty: for<'b> fn(&'b std::vec::Vec<i32>) -> core::fmt::rt::Argument<'b> {core::fmt::rt::Argument::<'_>::new_debug::<std::vec::Vec<i32>>}
+| 3: user_ty: Canonical { value: TypeOf(DefId(2:9866 ~ core[e323]::fmt::{impl#2}::new_v1), UserArgs { args: [ReBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrAnon })], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:9863 ~ core[e323]::fmt::{impl#2}), self_ty: std::fmt::Arguments<ReBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrAnon })> }) }), max_universe: U0, variables: [CanonicalVarInfo { kind: Region(U0) }, CanonicalVarInfo { kind: Region(U0) }] }, span: /rustc/2319be8e265dd19973574eb581d28297baf44b11/library/std/src/macros.rs:143:28: 143:61, inferred_ty: fn(&[&'static str], &[core::fmt::rt::Argument<'_>]) -> std::fmt::Arguments<'_> {std::fmt::Arguments::<'_>::new_v1}
+| 4: user_ty: Canonical { value: TypeOf(DefId(2:9789 ~ core[e323]::fmt::rt::{impl#1}::new_debug), UserArgs { args: [ReBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrAnon }), ^1], user_self_ty: Some(UserSelfTy { impl_def_id: DefId(2:9781 ~ core[e323]::fmt::rt::{impl#1}), self_ty: core::fmt::rt::Argument<ReBound(DebruijnIndex(0), BoundRegion { var: 2, kind: BrAnon })> }) }), max_universe: U0, variables: [CanonicalVarInfo { kind: Region(U0) }, CanonicalVarInfo { kind: Ty(General(U0)) }, CanonicalVarInfo { kind: Region(U0) }] }, span: src/main.rs:21:18: 21:22, inferred_ty: for<'b> fn(&'b std::vec::Vec<i32>) -> core::fmt::rt::Argument<'b> {core::fmt::rt::Argument::<'_>::new_debug::<std::vec::Vec<i32>>}
+|
+fn main() -> () {
+    let mut _0: ();
+    let mut _1: std::vec::Vec<i32>;
+    let _2: ();
+    let mut _3: &mut std::vec::Vec<i32>;
+    let mut _4: &mut std::vec::Vec<i32>;
+    let _5: ();
+    let _6: ();
+    let mut _7: std::fmt::Arguments<'_>;
+    let mut _8: &[&str];
+    let mut _9: &[&str; 2];
+    let _10: &[&str; 2];
+    let _11: [&str; 2];
+    let mut _12: &[core::fmt::rt::Argument<'_>];
+    let mut _13: &[core::fmt::rt::Argument<'_>; 1];
+    let _14: &[core::fmt::rt::Argument<'_>; 1];
+    let _15: [core::fmt::rt::Argument<'_>; 1];
+    let mut _16: core::fmt::rt::Argument<'_>;
+    let mut _17: &std::vec::Vec<i32>;
+    let _18: &std::vec::Vec<i32>;
+    let _19: ();
+    let mut _20: &mut std::vec::Vec<i32>;
+    let mut _21: &mut std::vec::Vec<i32>;
+    let _22: ();
+    let _23: ();
+    let mut _24: std::fmt::Arguments<'_>;
+    let mut _25: &[&str];
+    let mut _26: &[&str; 2];
+    let _27: &[&str; 2];
+    let _28: [&str; 2];
+    let mut _29: &[core::fmt::rt::Argument<'_>];
+    let mut _30: &[core::fmt::rt::Argument<'_>; 1];
+    let _31: &[core::fmt::rt::Argument<'_>; 1];
+    let _32: [core::fmt::rt::Argument<'_>; 1];
+    let mut _33: core::fmt::rt::Argument<'_>;
+    let mut _34: &std::vec::Vec<i32>;
+    let _35: &std::vec::Vec<i32>;
+    scope 1 {
+        debug v => _1;
+        let mut _36: &[&str; 2];
+        let mut _37: &[&str; 2];
+    }
+
+    bb0: {
+        StorageLive(_1);
+        _1 = Vec::<i32>::new() -> [return: bb1, unwind: bb12];
+    }
+
+    bb1: {
+        FakeRead(ForLet(None), _1);
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        _4 = &mut _1;
+        _3 = &mut (*_4);
+        _2 = do_work_to_vec(move _3) -> [return: bb2, unwind: bb11];
+    }
+
+    bb2: {
+        StorageDead(_3);
+        StorageDead(_4);
+        StorageDead(_2);
+        StorageLive(_5);
+        StorageLive(_6);
+        StorageLive(_7);
+        StorageLive(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        _37 = const _;
+        _10 = &(*_37);
+        _9 = &(*_10);
+        _8 = move _9 as &[&str] (PointerCoercion(Unsize));
+        StorageDead(_9);
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        StorageLive(_15);
+        StorageLive(_16);
+        StorageLive(_17);
+        StorageLive(_18);
+        _18 = &_1;
+        _17 = &(*_18);
+        _16 = core::fmt::rt::Argument::<'_>::new_debug::<Vec<i32>>(move _17) -> [return: bb3, unwind: bb11];
+    }
+
+    bb3: {
+        StorageDead(_17);
+        _15 = [move _16];
+        StorageDead(_16);
+        _14 = &_15;
+        _13 = &(*_14);
+        _12 = move _13 as &[core::fmt::rt::Argument<'_>] (PointerCoercion(Unsize));
+        StorageDead(_13);
+        _7 = Arguments::<'_>::new_v1(move _8, move _12) -> [return: bb4, unwind: bb11];
+    }
+
+    bb4: {
+        StorageDead(_12);
+        StorageDead(_8);
+        _6 = _print(move _7) -> [return: bb5, unwind: bb11];
+    }
+
+    bb5: {
+        StorageDead(_7);
+        StorageDead(_18);
+        StorageDead(_15);
+        StorageDead(_14);
+        StorageDead(_10);
+        StorageDead(_6);
+        _5 = const ();
+        StorageDead(_5);
+        StorageLive(_19);
+        StorageLive(_20);
+        StorageLive(_21);
+        _21 = &mut _1;
+        _20 = &mut (*_21);
+        _19 = do_work_to_generic::<Vec<i32>>(move _20) -> [return: bb6, unwind: bb11];
+    }
+
+    bb6: {
+        StorageDead(_20);
+        StorageDead(_21);
+        StorageDead(_19);
+        StorageLive(_22);
+        StorageLive(_23);
+        StorageLive(_24);
+        StorageLive(_25);
+        StorageLive(_26);
+        StorageLive(_27);
+        _36 = const _;
+        _27 = &(*_36);
+        _26 = &(*_27);
+        _25 = move _26 as &[&str] (PointerCoercion(Unsize));
+        StorageDead(_26);
+        StorageLive(_29);
+        StorageLive(_30);
+        StorageLive(_31);
+        StorageLive(_32);
+        StorageLive(_33);
+        StorageLive(_34);
+        StorageLive(_35);
+        _35 = &_1;
+        _34 = &(*_35);
+        _33 = core::fmt::rt::Argument::<'_>::new_debug::<Vec<i32>>(move _34) -> [return: bb7, unwind: bb11];
+    }
+
+    bb7: {
+        StorageDead(_34);
+        _32 = [move _33];
+        StorageDead(_33);
+        _31 = &_32;
+        _30 = &(*_31);
+        _29 = move _30 as &[core::fmt::rt::Argument<'_>] (PointerCoercion(Unsize));
+        StorageDead(_30);
+        _24 = Arguments::<'_>::new_v1(move _25, move _29) -> [return: bb8, unwind: bb11];
+    }
+
+    bb8: {
+        StorageDead(_29);
+        StorageDead(_25);
+        _23 = _print(move _24) -> [return: bb9, unwind: bb11];
+    }
+
+    bb9: {
+        StorageDead(_24);
+        StorageDead(_35);
+        StorageDead(_32);
+        StorageDead(_31);
+        StorageDead(_27);
+        StorageDead(_23);
+        _22 = const ();
+        StorageDead(_22);
+        _0 = const ();
+        drop(_1) -> [return: bb10, unwind: bb12];
+    }
+
+    bb10: {
+        StorageDead(_1);
+        return;
+    }
+
+    bb11 (cleanup): {
+        drop(_1) -> [return: bb12, unwind terminate(cleanup)];
+    }
+
+    bb12 (cleanup): {
+        resume;
+    }
+}

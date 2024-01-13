@@ -1,0 +1,16 @@
+// MIR for `std_containers::<impl at src/std_containers.rs:32:1: 33:38>::len` before CopyProp
+
+fn std_containers::<impl at src/std_containers.rs:32:1: 33:38>::len(_1: &HashSet<T>) -> usize {
+    debug self => _1;
+    let mut _0: usize;
+    let mut _2: &std::collections::HashSet<T>;
+
+    bb0: {
+        _2 = _1;
+        _0 = HashSet::<T>::len(move _2) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

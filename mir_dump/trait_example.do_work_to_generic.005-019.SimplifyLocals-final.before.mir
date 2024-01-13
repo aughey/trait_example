@@ -1,0 +1,15 @@
+// MIR for `do_work_to_generic` before SimplifyLocals-final
+
+fn do_work_to_generic(_1: &mut Container) -> () {
+    debug container => _1;
+    let mut _0: ();
+    let _2: ();
+
+    bb0: {
+        _2 = <Container as InserttableContainer<i32>>::insert(_1, const 42_i32) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}

@@ -1,0 +1,32 @@
+// MIR for `consume_work` before RevealAll
+
+fn consume_work(_1: &mut impl RemovableContainer<i32>) -> bool {
+    debug container => _1;
+    let mut _0: bool;
+    let _2: std::option::Option<i32>;
+    let mut _3: &mut impl RemovableContainer<i32>;
+    let mut _4: &std::option::Option<i32>;
+    scope 1 {
+        debug data => _2;
+    }
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &mut (*_1);
+        _2 = <impl RemovableContainer<i32> as RemovableContainer<i32>>::remove(move _3) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_3);
+        StorageLive(_4);
+        _4 = &_2;
+        _0 = Option::<i32>::is_some(move _4) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        StorageDead(_2);
+        return;
+    }
+}

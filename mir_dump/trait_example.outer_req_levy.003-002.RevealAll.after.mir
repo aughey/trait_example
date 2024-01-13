@@ -1,0 +1,69 @@
+// MIR for `outer_req_levy` after RevealAll
+
+fn outer_req_levy() -> () {
+    let mut _0: ();
+    let mut _1: std::vec::Vec<ComplexData>;
+    let _2: ();
+    let mut _3: &mut std::vec::Vec<ComplexData>;
+    let mut _4: ComplexData;
+    let _5: ();
+    let mut _6: bool;
+    let mut _7: &mut std::vec::Vec<ComplexData>;
+    let mut _8: &mut std::vec::Vec<ComplexData>;
+    scope 1 {
+        debug container => _1;
+        scope 2 {
+        }
+    }
+
+    bb0: {
+        StorageLive(_1);
+        _1 = Vec::<ComplexData>::new() -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &mut _1;
+        StorageLive(_4);
+        _4 = ComplexData { a: const 1_i32, b: const 2_i32 };
+        _2 = Vec::<ComplexData>::push(move _3, move _4) -> [return: bb2, unwind: bb5];
+    }
+
+    bb2: {
+        StorageDead(_4);
+        StorageDead(_3);
+        StorageDead(_2);
+        StorageLive(_5);
+        StorageLive(_6);
+        StorageLive(_7);
+        StorageLive(_8);
+        _8 = &mut _1;
+        _7 = &mut (*_8);
+        _6 = consume_priority::<Vec<ComplexData>, ComplexData>(move _7) -> [return: bb3, unwind: bb5];
+    }
+
+    bb3: {
+        StorageDead(_7);
+        PlaceMention(_6);
+        StorageDead(_8);
+        StorageDead(_6);
+        _5 = const ();
+        StorageDead(_5);
+        _0 = const ();
+        drop(_1) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_1);
+        return;
+    }
+
+    bb5 (cleanup): {
+        drop(_1) -> [return: bb6, unwind terminate(cleanup)];
+    }
+
+    bb6 (cleanup): {
+        resume;
+    }
+}
