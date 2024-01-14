@@ -2,6 +2,7 @@ pub trait InserttableContainer<Item> {
     fn insert(&mut self, item: Item);
 }
 
+
 impl<T> InserttableContainer<T> for Vec<T> {
     fn insert(&mut self, item: T) {
         self.push(item);
@@ -17,6 +18,15 @@ where
     Container: InserttableContainer<i32>,
 {
     container.insert(val);
+}
+
+fn do_work_generic_loop<Container>(container: &mut Container, items: impl IntoIterator<Item=i32>) 
+where
+    Container: InserttableContainer<i32>,
+    {
+    for i in items {
+        container.insert(i);
+    }
 }
 
 
@@ -35,6 +45,14 @@ fn main() {
     
         let mut v = vec![];
     do_work_to_generic(&mut v, 70_000_000);
+    println!("v: {:?}", v);
+
+        let mut v = vec![];
+    do_work_generic_loop(&mut v, [1,2,3,4,5]);
+    println!("v: {:?}", v);
+    
+            let mut v = vec![];
+    do_work_generic_loop(&mut v, 1..=5);
     println!("v: {:?}", v);
 
 }
